@@ -1,5 +1,12 @@
+html{
+    height: 100%;
+    width: 80%;
+}
 body {
     text-align: center;
+    height: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 h1 {
@@ -24,15 +31,15 @@ td {
 
 table {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: auto;
 }
 
 tr {
-    height: 20px;
+    height: 25px;
 }
 
 td {
-    width: 20px;
+    width: 25px;
 }
 
 input[type=number] {
