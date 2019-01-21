@@ -1,12 +1,13 @@
 html{
     height: 100%;
-    width: 80%;
+    background-color: #fffbe2;
 }
 body {
     text-align: center;
     height: 100%;
     width: 80%;
     margin: auto;
+    background-color: #fff29d;
 }
 
 h1 {
@@ -30,11 +31,13 @@ td {
 }
 
 table {
+    background-color: #fffbe2!important;
     border-collapse: collapse;
     margin: auto;
 }
 
 tr {
+	background-color: #fffbe2!important;
     height: 25px;
 }
 

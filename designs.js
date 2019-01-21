@@ -19,7 +19,6 @@ let makeGrid = (evt) => {
 
 //changes color of a grid
 let change = (evt) => {
-    console.log(color);
     $(evt.target).css('background-color', color);
 };
 
