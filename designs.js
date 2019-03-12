@@ -1,50 +1,52 @@
-//for color selection
-let color = $('#colorPicker').val();
-$('#colorPicker').on('change', function() {
-    color = $(this).val();
-});
 //manages the making of the grid
 let makeGrid = (evt) => {
     // fix: remove all child nodes of table element before appending row
-    $('.active > div > table').empty();
     evt.preventDefault();
-    let height = $('#inputHeight').val(); // td = height
-    let width = $('#inputWidth').val(); // tr = width
+    $('.active table').empty();
+    let height = $('.active #inputHeight').val(); // td = height
+    let width = $('.active #inputWidth').val(); // tr = width
     let row = `<tr>${'<td></td>'.repeat(width)}</tr>`;
 
     for (let i = 0; i < height; i++) {
-        $('.active > div > table').append(row);
+        $('.active table').append(row);
     }
 }
 
 //changes color of a grid
 let change = (evt) => {
+	//for color selection
+	let color = $('.active #colorPicker').val();
+	$('.active #colorPicker').on('change', function() {
+	    color = $(this).val();
+	});
     $(evt.target).css('background-color', color);
 };
 
 //Move to a different slide
-$("#oneb").click(function() {
-    $('.active').toggleClass('active');
+$(".oneb").click(function() {
+    $('.active').toggleClass();
     $('#one').toggleClass('active');
+    window.scrollTo(0,0);
     let loc = document.getElementById("one").getBoundingClientRect();
     window.scrollTo(loc.x,loc.y);
     return false;
 });
-$("#twob").click(function() {
-    $('.active').toggleClass('active');
+$(".twob").click(function() {
+    $('.active').toggleClass();
     $('#two').toggleClass('active');
+    window.scrollTo(0,0);
     let loc = document.getElementById("two").getBoundingClientRect();
     window.scrollTo(loc.x,loc.y);
     return false;
 });
-$("#threeb").click(function() {
-    $('.active').toggleClass('active');
+$(".threeb").click(function() {
+    $('.active').toggleClass();
     $('#three').toggleClass('active');
+    window.scrollTo(0,0);
     let loc = document.getElementById("three").getBoundingClientRect();
     window.scrollTo(loc.x,loc.y);
     return false;
 });
-
-$('#tab').on('click', makeGrid);
+$('.sizePicker').on('submit', makeGrid);
 
 $('table').on('click', change);
